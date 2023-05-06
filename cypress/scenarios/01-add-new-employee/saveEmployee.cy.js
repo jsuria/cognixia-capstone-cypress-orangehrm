@@ -6,10 +6,14 @@ describe('save new employee',() => {
         cy.visit('')
 
         // username
-        cy.get('').should('be.visible').type('Admin')
+        cy.get('username').should('be.visible').type('Admin')
 
         // password
-        cy.get('').should('be.visible').type('Password')
+        cy.get('password').should('be.visible').type('Password')
+
+        // Click button
+        cy.get('login button').should('be.visible')
+                              .click()
 
     })
 
@@ -55,8 +59,10 @@ describe('save new employee',() => {
         // save
         cy.get('save button').should('be.visible')
                              .click()
-    
-        // will be redirected to profile details screen
+    })
+
+    it('verify info has been entered then update with additional info', ()=>{
+         // will be redirected to profile details screen
         cy.url().should('contain', 'viewPersonalDetails')
 
         // Details are visible
@@ -66,6 +72,30 @@ describe('save new employee',() => {
         cy.get('last name field').should('be.visible')
                                  .should('not.be.empty')
                                  .contains('Maximus')
+        // Set birthdate
+        cy.xpath('//label[contains(text(),"Birth")]/parent::div/following-sibling::div/descendant::input')
+                .should('be.visible')
+                .should('have.attr','yyyy-mm-dd')
+                .type('1982-09-24')
+        
+        // Open the datepicker
+        cy.xpath('//label[contains(text(),"Birth")]/parent::div/following-sibling::div/descendant::input')
+                .should('be.visible')
+                .should('equal', '1982-09-24')
+                .click()
+        
+        // Set gender to Male
+        cy.get('gender radio male').should('be.visible')
+                                   .check()
+                                   .should('be.checked')
+        
+        // Set nationality to American
+        cy.get('nationality dropdown').should('be.visible')
+                                      .select('American')
+                                      .should('have.value','American')
+         // save
+         cy.get('save button').should('be.visible')
+                              .click()
     })
 
     it('go to System User List and search new user ', ()=> {
