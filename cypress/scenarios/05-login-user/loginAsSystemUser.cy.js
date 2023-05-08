@@ -3,17 +3,29 @@ describe('login as new employee system user',() => {
 
     // login
     before(()=>{
-        cy.visit('')
+        // set the browser window size
+        cy.viewport(1920, 1080)
+
+        cy.visit('http://localhost/apps/orangehrm/web/index.php/auth/login')
 
         // username
-        cy.get('username field').should('be.visible').type('Admin')
+        cy.get('input[name="username"]').should('be.visible').type('alexandrus.maximus')
 
         // password
-        cy.get('password field').should('be.visible').type('Password')
+        cy.get('input[name="password"]').should('be.visible').type('A13x#4321!')
 
-        // get button
-        cy.get('login button').should('be.visible')
-                              .click()
+        // Click button
+        cy.xpath('//button[@type="submit"]').should('be.visible')
+                                          .click()
+
+        // Dashboard has loaded on login
+        cy.url().should('contain', '/dashboard/index')
+
+        // Sidepanel has loaded
+        cy.xpath('//div[@class="oxd-sidepanel-body"]/descendant::ul')
+            .should('be.visible')
+
+        cy.wait(2000)
     })
 
     
@@ -26,33 +38,43 @@ describe('login as new employee system user',() => {
          cy.url().should('contain', 'viewPersonalDetails')
 
         // Fields are visible and enabled
-        cy.get('first name').should('be.visible').contains('Alexandrus')
-        cy.get('last name').should('be.visible').contains('Maximus')
+       // Details are visible
+        cy.get('[name="firstName"]').should('be.visible')
+                                    .should('have.value','Alexandrus')
+
+        cy.get('[name="lastName"]').should('be.visible')
+                                    .should('have.value','Maximus')
 
         // Nationality        
-        cy.get('nationality').should('be.visible').contains('American')
-
+        cy.xpath('//label[contains(text(),"Nationality")]/parent::div/following-sibling::div/descendant::div[contains(text(),"American")]')
+                .should('be.visible')
+                
         // Gender
-        cy.get('gender radio male').should('be.visible')
-                                   .should('be.checked')
+        cy.xpath('//input[@type="radio"][@value="1"]')
+                .should('exist')
+                .should('be.checked')
 
         // Should be non-editable
         // Employee ID, Drivers's License Number, and Date of Birth
-        cy.get('employee id').should('be.visible')
-                             .should('not.be.empty')
-                             .should('not.be.NaN')
-                             .should('be.disabled')
 
-        cy.get('date of birth').should('be.visible')
-                             .should('not.be.empty')
+        // Not required so it can be blank
+        cy.xpath('//label[text()="Employee Id"]/parent::div/following-sibling::div/descendant::input')
+                             .should('be.visible')
                              .should('be.disabled')
+        // Birth date
+        cy.xpath('//label[contains(text(),"Birth")]/parent::div/following-sibling::div/descendant::input')
+                             .should('be.visible')
+                             .should('be.disabled')
+                             .should('have.value', '1982-09-24')
 
         // Testing for another disabled field
-        cy.get('drivers license').should('be.visible')
-                                 .should('be.disabled')
+        // Drivers License, not required
+        cy.xpath('//label[text()="Driver\'s License Number"]/parent::div/following-sibling::div/descendant::input')
+                            .should('be.visible')
+                            .should('be.disabled')
 
         // logout
-        //cy.visit('/logout')
+        cy.visit('http://localhost/apps/orangehrm/web/index.php/auth/logout')
     })
 
     

@@ -1,7 +1,7 @@
 {
     "github":{
         "url_public": "https://api.github.com/repositories",
-        "token": "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",
+        "token": "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",
         "url_auth": "https://api.github.com/user/repos",
         "owner": "jsuria",
         "temp_repository":"Disposable_cypressAutomationMayTemp4",

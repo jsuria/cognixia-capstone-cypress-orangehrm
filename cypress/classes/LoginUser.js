@@ -5,7 +5,6 @@ export default class LoginUser {
     #input_email
     #password
     #input_password
-    #checkbox
     #button
     #button_text
     #title_login
@@ -17,7 +16,6 @@ export default class LoginUser {
         this.#input_email = params.input_email
         this.#password = params.password
         this.#input_password = params.input_password
-        this.#checkbox = params.checkbox
         this.#button = params.button
         this.#button_text = params.button_text
         this.#title_login = params.title_login

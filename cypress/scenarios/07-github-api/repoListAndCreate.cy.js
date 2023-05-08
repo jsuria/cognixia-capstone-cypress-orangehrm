@@ -1,8 +1,11 @@
+/// <reference types="cypress" />
+/// <reference types="cypress-xpath" />
+
 describe('Github Repo', () => {
 
     it('get authenticated user - list all (public) repos', () => {
 
-        cy.fixture('apiTestData').then((apiValues)=> {
+        cy.fixture('gitHubAPI').then((apiValues)=> {
             
             const headersCustom = {
                 "Authorization": `Bearer ${apiValues.github.token}`,
@@ -32,7 +35,7 @@ describe('Github Repo', () => {
 
     it('create new repository', () => {
 
-        cy.fixture('apiTestData').then((apiValues)=> {
+        cy.fixture('gitHubAPI').then((apiValues)=> {
             
             const headersCustom = {
                 "Authorization": `Bearer ${apiValues.github.token}`,
@@ -58,6 +61,14 @@ describe('Github Repo', () => {
                 expect(responseBody.full_name).to.eq(`${apiValues.github.owner}/${apiValues.github.temp_repository}`)
                 expect(responseBody.owner.login).to.eq(`${apiValues.github.owner}`)
             
+                // TODO
+                /*
+                    Validate specific value into response body using JSON path
+                    Validate specific headers
+                    Validate key/property from response
+                    Validate response time (NFR 2000 msec)
+                */
+
             })
         })
     })

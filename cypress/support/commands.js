@@ -26,13 +26,12 @@
 
 require('cypress-xpath')
 require('cypress-iframe')
-require('@4tw/cypress-drag-drop')
 require('cypress-file-upload')
 
-import '../support/core/cmdAddNewEmployee'
+/* import '../support/core/cmdAddNewEmployee'
 import '../support/core/cmdChangeUserPassword'
 import '../support/core/cmdGithubAPI'
 import '../support/core/cmdLoginUser'
 import '../support/core/cmdSearchDirectory'
 import '../support/core/cmdSearchUser'
-import '../support/core/cmdUpdateEmployeeProfile'
+import '../support/core/cmdUpdateEmployeeProfile' */
