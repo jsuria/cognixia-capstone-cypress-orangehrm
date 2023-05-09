@@ -1,0 +1,26 @@
+{
+    "sidepanel":"//div[@class='oxd-sidepanel-body']/descendant::ul",          
+    "linkpim":"//div[@class='oxd-sidepanel-body']/descendant::a/child::span[text()='PIM']", 
+    "urlpim":"http://localhost/apps/orangehrm/web/index.php/pim/viewPimModule",
+    "headeremployeeinfo":"//h5[text()='Employee Information']",
+    "buttonsave":"//button[@type='submit']",
+
+    "inputsearch":"//label[contains(text(),'Employee Name')]/parent::div/following-sibling::div/descendant::input",
+    "rowresult":"//div[@class='oxd-table-card']",
+
+    "inputfirstname":"[name='firstName']",
+    "inputlastname":"[name='lastName']",
+    "inputdatepicker":"//label[contains(text(),'Birth')]/parent::div/following-sibling::div/descendant::input",
+    "selectnationality":"//label[contains(text(),'Nationality')]/parent::div/following-sibling::div/descendant::div[contains(text(),'American')]",
+
+    "userphoto":"//img[@class='employee-image']",
+    "headerchangephoto":"//h6[text()='Change Profile Picture']",
+    "inputfile":"input[type='file']",
+    "blobphoto":"//input[@type='file']/following-sibling::div/descendant::img[contains(@src,'data:image/jpeg')]",
+    "linkpersonaldetails":"//a[text()='Personal Details']",
+    "headerpersonaldetails":"//h6[text()='Personal Details']",
+
+    "headerattachmentsform":"//h6[text()='Attachments']/following-sibling::button",
+    "buttonattachments":"//input[@type='file']/ancestor::form/descendant::button[@type='submit']",
+    "resultattachment":"//div[@class='orangehrm-attachment']/descendant::div[contains(text(),'demo_fileupload.pdf')]"
+}

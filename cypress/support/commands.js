@@ -28,10 +28,65 @@ require('cypress-xpath')
 require('cypress-iframe')
 require('cypress-file-upload')
 
-/* import '../support/core/cmdAddNewEmployee'
-import '../support/core/cmdChangeUserPassword'
-import '../support/core/cmdGithubAPI'
-import '../support/core/cmdLoginUser'
-import '../support/core/cmdSearchDirectory'
-import '../support/core/cmdSearchUser'
-import '../support/core/cmdUpdateEmployeeProfile' */
+import AddNewEmployee from '../classes/AddNewEmployee'
+import LoginSystemUser from '../classes/LoginSystermUser'
+import SearchUser from '../classes/SearchUser'
+
+Cypress.Commands.add('SetWaitTime', (msTime) => { 
+    cy.wait(msTime)
+})
+
+Cypress.Commands.add('Logout', (params) => { 
+    // logout
+    cy.visit(params.logout)
+})
+
+Cypress.Commands.add('LoginToWeb', (params) => { 
+    //cy.wait(msTime)
+
+    cy.visit(params.url)
+
+    // set the browser window size
+    cy.viewport(params.viewport.width, params.viewport.height)
+
+    // username
+    cy.get(params.inputusername).should('be.visible')
+                                .type(params.username)
+
+    // password
+    cy.get(params.inputpassword).should('be.visible')
+                                .type(params.password)
+
+    // Click button
+    cy.xpath(params.buttonlogin).should('be.visible')
+                                      .click()
+})
+
+Cypress.Commands.add('TestAddNewEmployee', (params) => {
+    const addNewEmployee = new AddNewEmployee(params)
+
+    addNewEmployee.verifyDashboardHasLoaded()
+                .verifyAddEmployeeFormHasLoaded()
+                .inputAddEmployeeForm()
+                .inputUserCredentials()
+                .verifyPersonalDetailsHasLoaded()
+                .inputUpdateEmployeeForm()
+})
+
+
+Cypress.Commands.add('TestSearchUser', (params) => {
+    const searchUser = new SearchUser(params)
+
+    searchUser.verifyDashboardHasLoaded()
+              .inputSearchForm()
+              .loadPersonalDetails()
+              .upload()
+})
+
+Cypress.Commands.add('TestLoginSystemUser', (params) => {
+    const loginSystemUser = new LoginSystemUser(params)
+
+    loginSystemUser.verifyDashboardHasLoaded()
+                   .loadPersonalDetails()
+                   .verifyDisabledFields()
+})

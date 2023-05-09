@@ -1,0 +1,24 @@
+{
+    "sidepanel":"//div[@class='oxd-sidepanel-body']/descendant::ul",          
+    "linkpim":"//div[@class='oxd-sidepanel-body']/descendant::a/child::span[text()='PIM']", 
+    "urlpim":"http://localhost/apps/orangehrm/web/index.php/pim/viewPimModule",
+    "headeremployeeinfo":"//h5[text()='Employee Information']",
+    "buttonaddemployee":"//button[@type='button']/descendant::i[@class='oxd-icon bi-plus oxd-button-icon']",
+    "headeraddemployee":"//h6[text()='Add Employee']",
+
+    "inputfirstname":"[name='firstName']",
+    "inputlastname":"[name='lastName']",
+    "inputemployeeid":"//label[text()='Employee Id']/parent::div/following-sibling::div/descendant::input",
+    "togglelogin":"//p[text()='Create Login Details']/following-sibling::div",
+    "inputusername":"//label[text()='Username']/parent::div/following-sibling::div/descendant::input",
+    "inputpassword":"//label[text()='Password']/parent::div/following-sibling::div/descendant::input",
+    "inputconfirm":"//label[text()='Confirm Password']/parent::div/following-sibling::div/descendant::input",
+    "inputuserenable":"//input[@type='radio'][@value='1']",
+    "buttonsave":"//button[@type='submit']",
+
+    "inputdatepicker":"//label[contains(text(),'Birth')]/parent::div/following-sibling::div/descendant::input",
+    "selectnationality":"//label[contains(text(),'Nationality')]/parent::div/following-sibling::div/descendant::div[contains(text(),'Select')]",
+    "optionnationality":"[role=listbox] [role=option]",
+
+    "inputgendermale":"//input[@type='radio'][@value='1']"
+}
