@@ -1,10 +1,11 @@
 {
     "github":{
         "url_public": "https://api.github.com/repositories",
-        "token": "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",
+        "token_p2": "8scWhQFWFj0n0RXNwbtQDSd8enj6dC07zxKz",
+        "token_p1": "ghp_",
         "url_auth": "https://api.github.com/user/repos",
         "owner": "jsuria",
         "temp_repository":"Disposable_cypressAutomationMayTemp4",
-        "temp_repository_url":"https://github.com/jsuria/Disposable_cypressAutomationMayTemp4"
+        "temp_repository_url":"https://github.com/jsuria/Disposable_cypressAutomationMayTemp"
     }
 }

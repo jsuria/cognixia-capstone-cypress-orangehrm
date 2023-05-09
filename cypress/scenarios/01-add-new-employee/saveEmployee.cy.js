@@ -100,7 +100,7 @@ describe('add and update new employee',() => {
                                 .should('contain', 'Save')
                                 .click()
 
-        cy.wait(2000)
+        cy.wait(3000)
 
         // will be redirected to profile details screen
         cy.url().should('contain', 'viewPersonalDetails')

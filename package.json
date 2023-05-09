@@ -1,4 +1,18 @@
 {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scen01Headed": "npx cypress run --browser chrome --spec cypress/scenarios/01-add-new-employee/saveEmployee.cy.js --headed --reporter mochawesome",
+    "scen01Headless": "npx cypress run --browser chrome --spec cypress/scenarios/01-add-new-employee/saveEmployee.cy.js --reporter mochawesome",
+    
+    "scen02Headed": "npx cypress run --browser chrome --spec cypress/scenarios/02-search-user/searchEmployee.cy.js --headed --reporter mochawesome",
+    "scen02Headless": "npx cypress run --browser chrome --spec cypress/scenarios/02-search-user/searchEmployee.cy.js --reporter mochawesome",
+    
+    "scen03Headed": "npx cypress run --browser chrome --spec cypress/scenarios/05-login-user/loginAsSystemUser.cy.js --headed --reporter mochawesome",
+    "scen03Headless": "npx cypress run --browser chrome --spec cypress/scenarios/05-login-user/loginAsSystemUser.cy.js --reporter mochawesome",
+    
+    "apiHeaded": "npx cypress run --browser chrome --spec cypress/scenarios/07-github-api/repoListAndCreate.cy.js --headed --reporter mochawesome",
+    "apiHeadless": "npx cypress run --browser chrome --spec cypress/scenarios/07-github-api/repoListAndCreate.cy.js --reporter mochawesome"
+  },
   "devDependencies": {
     "cypress": "^12.11.0",
     "cypress-file-upload": "^5.0.8",

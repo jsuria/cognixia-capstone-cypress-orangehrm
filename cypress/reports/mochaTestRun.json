@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-09T00:52:49.280Z",
+    "end": "2023-05-09T00:52:59.928Z",
+    "duration": 10648,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6766e983-8f05-460b-8f8b-aec87798e9ad",
+      "title": "",
+      "fullFile": "cypress\\scenarios\\05-login-user\\loginAsSystemUser.cy.js",
+      "file": "cypress\\scenarios\\05-login-user\\loginAsSystemUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb702011-1956-4d82-af84-cb58004f30fe",
+          "title": "login as new employee system user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "personal details view info",
+              "fullTitle": "login as new employee system user personal details view info",
+              "timedOut": null,
+              "duration": 8201,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Click My Info\ncy.visit('http://localhost/apps/orangehrm/web/index.php/pim/viewMyDetails');\n// will be redirected to profile details screen\ncy.url().should('contain', 'viewPersonalDetails');\n// Fields are visible and enabled\n// Details are visible\ncy.get('[name=\"firstName\"]').should('be.visible').should('have.value', 'Alexandrus');\ncy.get('[name=\"lastName\"]').should('be.visible').should('have.value', 'Maximus');\n// Nationality        \ncy.xpath('//label[contains(text(),\"Nationality\")]/parent::div/following-sibling::div/descendant::div[contains(text(),\"American\")]').should('be.visible');\n// Gender\ncy.xpath('//input[@type=\"radio\"][@value=\"1\"]').should('exist').should('be.checked');\n// Should be non-editable\n// Employee ID, Drivers's License Number, and Date of Birth\n// Not required so it can be blank\ncy.xpath('//label[text()=\"Employee Id\"]/parent::div/following-sibling::div/descendant::input').should('be.visible').should('be.disabled');\n// Birth date\ncy.xpath('//label[contains(text(),\"Birth\")]/parent::div/following-sibling::div/descendant::input').should('be.visible').should('be.disabled').should('have.value', '1982-09-24');\n// Testing for another disabled field\n// Drivers License, not required\ncy.xpath('//label[text()=\"Driver\\'s License Number\"]/parent::div/following-sibling::div/descendant::input').should('be.visible').should('be.disabled');\n// logout\ncy.visit('http://localhost/apps/orangehrm/web/index.php/auth/logout');",
+              "err": {},
+              "uuid": "03c35cc6-522d-420b-ab53-845cd994da48",
+              "parentUUID": "cb702011-1956-4d82-af84-cb58004f30fe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "03c35cc6-522d-420b-ab53-845cd994da48"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8201,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochaTestRun",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "mochaTestRun",
+        "charts": true,
+        "reportPageTitle": "Mocha Test Suite",
+        "html": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
