@@ -18,7 +18,6 @@ describe('add and update new employee',() => {
     })
 
     it('go to form and add employee', ()=> {
-        
         cy.fixture('addNewEmployee').then((selectors)=> {
             cy.TestAddNewEmployee(selectors)
         })

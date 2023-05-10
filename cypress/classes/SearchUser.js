@@ -207,5 +207,10 @@ export default class SearchUser {
             })
     }
 
+    takeScreenshot(){
+        cy.screenshot()
+        return this
+    }
+
 
 }

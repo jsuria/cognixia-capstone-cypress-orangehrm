@@ -22,5 +22,4 @@ describe('search employee',() => {
             cy.TestSearchUser(params)
         })
     })
-
 })
