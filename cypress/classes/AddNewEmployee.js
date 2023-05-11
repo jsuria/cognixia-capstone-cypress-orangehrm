@@ -184,9 +184,4 @@ export default class AddNewEmployee {
 
         cy.SetWaitTime(2000)
     }
-
-    takeScreenshot(){
-        cy.screenshot()
-        return this
-    }
 }

@@ -68,11 +68,9 @@ Cypress.Commands.add('TestAddNewEmployee', (params) => {
     addNewEmployee.verifyDashboardHasLoaded()
                 .verifyAddEmployeeFormHasLoaded()
                 .inputAddEmployeeForm()
-                .takeScreenshot()
                 .inputUserCredentials()
                 .verifyPersonalDetailsHasLoaded()
                 .inputUpdateEmployeeForm()
-                .takeScreenshot()
 })
 
 
@@ -81,10 +79,8 @@ Cypress.Commands.add('TestSearchUser', (params) => {
 
     searchUser.verifyDashboardHasLoaded()
               .inputSearchForm()
-              .takeScreenshot()
               .loadPersonalDetails()
               .upload()
-              .takeScreenshot()
 })
 
 Cypress.Commands.add('TestLoginSystemUser', (params) => {
