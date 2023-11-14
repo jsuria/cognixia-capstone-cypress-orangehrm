@@ -1,7 +1,7 @@
 {
     "sidepanel":"//div[@class='oxd-sidepanel-body']/descendant::ul",          
     "linkpim":"//div[@class='oxd-sidepanel-body']/descendant::a/child::span[text()='PIM']", 
-    "urlpim":"http://localhost/apps/orangehrm/web/index.php/pim/viewPimModule",
+    "urlpim":"https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPimModule",
     "headeremployeeinfo":"//h5[text()='Employee Information']",
     "buttonsave":"//button[@type='submit']",
 
