@@ -4,8 +4,8 @@
     "inputusername":"input[name='username']",
     "inputpassword":"input[name='password']",
     "buttonlogin":"//button[@type='submit']",
-    "url":"http://localhost/apps/orangehrm/web/index.php/auth/login",
-    "logout":"http://localhost/apps/orangehrm/web/index.php/auth/logout",
+    "url":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    "logout":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout",
     "viewport":{
         "width": 1920,
         "height": 1080
@@ -20,7 +20,7 @@
     "inputgender":"//input[@type='radio'][@value='1']",
     "inputemployeeid":"//label[text()='Employee Id']/parent::div/following-sibling::div/descendant::input",
 
-    "urlpersonaldetails":"http://localhost/apps/orangehrm/web/index.php/pim/viewMyDetails",
+    "urlpersonaldetails":"https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewMyDetails",
     "headerpersonaldetails":"//h6[text()='Personal Details']",
     "inputlicense":"//label[contains(text(),'License')]/parent::div/following-sibling::div/descendant::input"   
 }

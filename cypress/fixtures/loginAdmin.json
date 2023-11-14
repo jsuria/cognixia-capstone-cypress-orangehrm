@@ -3,9 +3,9 @@
     "inputpassword":"input[name='password']",
     "buttonlogin":"//button[@type='submit']",
     "username":"Admin",
-    "password":"Js092482!",
-    "url":"http://localhost/apps/orangehrm/web/index.php/auth/login",
-    "logout":"http://localhost/apps/orangehrm/web/index.php/auth/logout",
+    "password":"admin123",
+    "url":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    "logout":"https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout",
     "viewport":{
         "width": 1920,
         "height": 1080
